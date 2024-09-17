@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NewsannouncementPage from './Component/Newsannouncement';
+import Landingpage from './Component/Landingpage';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import Growers , {newsData} from './Component/Growers';
+import NewsDetail from './Component/NewsDetails';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+   <Router>
+    <Routes>
+      <Route path="/" element={ <Landingpage/>}/>
+      <Route path="/news&announcement" element={<NewsannouncementPage/> }/>
+      <Route path="/grower-information" element={<Growers/>}/>
+      <Route 
+            path="/news/:id" 
+            element={<NewsDetail newsData={newsData} />}  // Pass newsData via props
+          />
+    </Routes>
+    </Router>
     </div>
   );
 }

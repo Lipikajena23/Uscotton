@@ -1,0 +1,115 @@
+@keyframes dotAnimation {
+  0% {
+    /* transform: rotate(0deg); */
+  }
+  100% {
+
+    /* transform: rotate(360deg); */
+  }
+}
+
+.dotted-circle {
+  position: absolute;
+  /* top: 1700px; */
+  /* left:-230px;  */
+  width: 400px; /* Set the size */
+  height: 400px;
+  border-radius: 50%;
+  z-index: 1; /* Make sure it's behind other content */
+  animation: dotAnimation 6s linear infinite;
+  opacity: 0.2; /* Make it slightly transparent */
+}
+
+.line-circle {
+  position: absolute;
+  /* top: 1560px */
+  /* right:-50px;  */
+  width: 200px; /* Set the size */
+  height: 200px;
+  border-radius: 50%;
+  z-index: 1; /* Make sure it's behind other content */
+  animation: dotAnimation 6s linear infinite;
+  opacity: 1; /* Make it slightly transparent */
+}
+
+
+.heading{
+    color: whitesmoke;
+}
+.custom-text{
+    color: whitesmoke;
+    max-width: 55ch; /* Limits the number of characters per line */
+  word-wrap: break-word; /* Ensures words wrap when needed */
+  white-space: normal; /* Prevents text from being one long line */
+  line-height: 1.2; /* Controls spacing between lines */
+    
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.fadeInUp {
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+
+.news-events-container{
+  background-color: rgba(198, 211, 220, 0.816);
+  margin: 9px;
+  border-radius: 7px;
+}
+
+
+.nav-btn{
+  color: #004987;
+  font-weight: 700;
+
+}
+
+@media (min-width: 1024px) {
+  .nav-btn {
+    background-color: white;
+    color: #004987;
+    font-weight: 700;
+    padding: 0.3vw 0.7vw;
+    white-space: nowrap;
+    border-radius: 7px;
+    font-size: 13px;
+    box-shadow: 0px 3px 0px 0px #004987;
+    transform: translateY(0); /* Starts at its original position */
+  transition: transform 0.3s ease-out; /* Smooth transition for the transform property */
+  }
+ 
+  
+  .nav-btn:hover {
+    box-shadow: 0px 3px 0px 0px #2fb44a;
+    background-color: #004987;
+    color: whitesmoke;
+    transform: translateY(-10px);
+  }
+}
